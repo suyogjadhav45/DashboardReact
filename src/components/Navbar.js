@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css'
-import {Button} from './Button.js'
+import { Button } from './Button.js'
 
 export default function Navbar() {
 
   const [click, setClick] = useState(false);
-  const [button,setButton]=useState(true);
+  const [button, setButton] = useState(true);
 
-  const showButton=()=>{
-    if(window.innerWidth<=960){
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
       setButton(false)
     }
-    else{
+    else {
       setButton(true);
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     showButton();
-  },[])
+  }, [])
 
-  window.addEventListener('resize',showButton);
+  window.addEventListener('resize', showButton);
 
   const handleclick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
